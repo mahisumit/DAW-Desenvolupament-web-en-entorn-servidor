@@ -41,52 +41,46 @@ prova4.1/
 │   ├── change-psw.view.php
 ├── config.php
 
-### Descripció dels Fitxers Principals
+### Controllers
 
-#### controllers/BookController.php
+- **BookController.php**: Handles all book-related operations such as creating, updating, deleting, and fetching books.
+- **UserController.php**: Manages user-related operations including login, signup, and password changes.
 
-Aquest fitxer conté la lògica del controlador per gestionar les operacions relacionades amb els llibres, com ara obtenir llibres per pàgina, obtenir el nombre total de llibres, crear, editar i eliminar llibres.
+### Models
 
-#### models/Book.php
+- **Book.php**: Represents the Book model and contains methods for interacting with the book data in the database.
+- **User.php**: Represents the User model and contains methods for interacting with the user data in the database.
 
-Aquest fitxer conté la lògica del model per interactuar amb la base de dades. Inclou mètodes per obtenir llibres, obtenir el nombre total de llibres, crear, editar i eliminar llibres.
+### Public
 
-#### public/Estils/styles.css
+- **Estils/**: Contains CSS files for styling the application.
+  - **styles.css**: General styles for the application.
+  - **edit.css**: Styles specific to the edit book page.
+  - **login.css**: Styles specific to the login page.
+  - **change-psw.css**: Styles specific to the change password page.
+- **functions.php**: Contains utility functions used throughout the application.
+- **login.php**: Handles user login functionality.
+- **logout.php**: Handles user logout functionality.
+- **signup.php**: Handles user signup functionality.
+- **delete.php**: Handles book deletion functionality.
+- **edit.php**: Handles book editing functionality.
+- **insert.php**: Handles book insertion functionality.
+- **update.php**: Handles book update functionality.
+- **index.php**: The main entry point of the application, displays the list of books.
+- **session_check.php**: Checks if the user session is active.
+- **change-psw.php**: Handles password change functionality.
+- **flash.php**: Manages flash messages for user feedback.
 
-Aquest fitxer conté els estils generals per a l'aplicació, incloent-hi l'animació de fons, estils per a la barra de navegació, botons i la paginació.
+### Views
 
-#### public/Estils/edit.css
+- **index.view.php**: The main view displaying the list of books.
+- **edit.view.php**: The view for editing a book.
+- **insert.view.php**: The view for inserting a new book.
+- **delete.view.php**: The view for deleting a book.
+- **login.view.php**: The view for user login.
+- **signup.view.php**: The view for user signup.
+- **change-psw.view.php**: The view for changing the user password.
 
-Aquest fitxer conté els estils específics per al formulari d'edició de llibres, incloent-hi l'alineació dels camps i l'estil del botó de guardar.
+### config.php
 
-#### public/functions.php
-
-Aquest fitxer conté funcions auxiliars que s'utilitzen a l'aplicació, com ara la funció per mostrar missatges flash.
-
-#### public/login.php
-
-Aquest fitxer conté la lògica per gestionar l'inici de sessió dels usuaris.
-
-#### public/logout.php
-
-Aquest fitxer conté la lògica per gestionar el tancament de sessió dels usuaris.
-
-#### public/signup.php
-
-Aquest fitxer conté la lògica per gestionar el registre de nous usuaris.
-
-#### public/delete.php
-
-Aquest fitxer conté la lògica per eliminar llibres de la base de dades.
-
-#### views/index.view.php
-
-Aquest fitxer conté la vista principal que mostra la llista de llibres amb opcions per editar i eliminar llibres, així com la paginació.
-
-#### views/edit.view.php
-
-Aquest fitxer conté la vista per editar un llibre existent. Inclou un formulari amb camps per al títol, descripció, autor ID i any de publicació.
-
-#### views/insert.view.php
-
-Aquest fitxer conté la vista per inserir un nou llibre. Inclou un formulari amb camps per al títol, descripció, autor ID i any de publicació.
+Contains configuration settings for the application, such as database connection details.
