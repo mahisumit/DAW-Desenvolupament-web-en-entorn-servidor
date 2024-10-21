@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Change Password</title>
+    <title>Canvia la contrasenya</title>
     <link rel="stylesheet" type="text/css" href="../public/Estils/change-psw.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script>
