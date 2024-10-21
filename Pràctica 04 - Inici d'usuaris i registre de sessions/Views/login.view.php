@@ -20,7 +20,6 @@
     <div class="login-container">
         <h2>Login</h2>
         <?php
-        session_start(); 
         require_once '../public/functions.php';
         displayFlashMessages();
         ?>
