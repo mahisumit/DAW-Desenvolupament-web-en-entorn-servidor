@@ -41,46 +41,46 @@ prova4.1/
 │   ├── change-psw.view.php
 ├── config.php
 
-### Controllers
+### Controladors
 
-- **BookController.php**: Handles all book-related operations such as creating, updating, deleting, and fetching books.
-- **UserController.php**: Manages user-related operations including login, signup, and password changes.
+- **BookController.php**: Gestiona totes les operacions relacionades amb els llibres, com ara crear, actualitzar, eliminar i obtenir llibres.
+- **UserController.php**: Administra les operacions relacionades amb els usuaris, incloent inici de sessió, registre i canvis de contrasenya.
 
 ### Models
 
-- **Book.php**: Represents the Book model and contains methods for interacting with the book data in the database.
-- **User.php**: Represents the User model and contains methods for interacting with the user data in the database.
+- **Book.php**: Representa el model de Llibre i conté mètodes per interactuar amb les dades dels llibres a la base de dades.
+- **User.php**: Representa el model d'Usuari i conté mètodes per interactuar amb les dades dels usuaris a la base de dades.
 
-### Public
+### Públic
 
-- **Estils/**: Contains CSS files for styling the application.
-  - **styles.css**: General styles for the application.
-  - **edit.css**: Styles specific to the edit book page.
-  - **login.css**: Styles specific to the login page.
-  - **change-psw.css**: Styles specific to the change password page.
-- **functions.php**: Contains utility functions used throughout the application.
-- **login.php**: Handles user login functionality.
-- **logout.php**: Handles user logout functionality.
-- **signup.php**: Handles user signup functionality.
-- **delete.php**: Handles book deletion functionality.
-- **edit.php**: Handles book editing functionality.
-- **insert.php**: Handles book insertion functionality.
-- **update.php**: Handles book update functionality.
-- **index.php**: The main entry point of the application, displays the list of books.
-- **session_check.php**: Checks if the user session is active.
-- **change-psw.php**: Handles password change functionality.
-- **flash.php**: Manages flash messages for user feedback.
+- **Estils/**: Conté els fitxers CSS per a l'estil de l'aplicació.
+  - **styles.css**: Estils generals per a l'aplicació.
+  - **edit.css**: Estils específics per a la pàgina d'edició de llibres.
+  - **login.css**: Estils específics per a la pàgina d'inici de sessió.
+  - **change-psw.css**: Estils específics per a la pàgina de canvi de contrasenya.
+- **functions.php**: Conté funcions utilitàries usades a tota l'aplicació.
+- **login.php**: Gestiona la funcionalitat d'inici de sessió d'usuaris.
+- **logout.php**: Gestiona la funcionalitat de tancament de sessió d'usuaris.
+- **signup.php**: Gestiona la funcionalitat de registre d'usuaris.
+- **delete.php**: Gestiona la funcionalitat d'eliminació de llibres.
+- **edit.php**: Gestiona la funcionalitat d'edició de llibres.
+- **insert.php**: Gestiona la funcionalitat d'inserció de llibres.
+- **update.php**: Gestiona la funcionalitat d'actualització de llibres.
+- **index.php**: El punt d'entrada principal de l'aplicació, mostra la llista de llibres.
+- **session_check.php**: Comprova si la sessió de l'usuari està activa.
+- **change-psw.php**: Gestiona la funcionalitat de canvi de contrasenya.
+- **flash.php**: Gestiona els missatges flash per a la retroalimentació de l'usuari.
 
-### Views
+### Vistes
 
-- **index.view.php**: The main view displaying the list of books.
-- **edit.view.php**: The view for editing a book.
-- **insert.view.php**: The view for inserting a new book.
-- **delete.view.php**: The view for deleting a book.
-- **login.view.php**: The view for user login.
-- **signup.view.php**: The view for user signup.
-- **change-psw.view.php**: The view for changing the user password.
+- **index.view.php**: La vista principal que mostra la llista de llibres.
+- **edit.view.php**: La vista per a editar un llibre.
+- **insert.view.php**: La vista per a inserir un nou llibre.
+- **delete.view.php**: La vista per a eliminar un llibre.
+- **login.view.php**: La vista per a l'inici de sessió d'usuaris.
+- **signup.view.php**: La vista per al registre d'usuaris.
+- **change-psw.view.php**: La vista per al canvi de contrasenya de l'usuari.
 
 ### config.php
 
-Contains configuration settings for the application, such as database connection details.
+Conté la configuració de l'aplicació, com ara els detalls de connexió a la base de dades.
