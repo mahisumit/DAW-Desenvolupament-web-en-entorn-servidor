@@ -9,36 +9,36 @@ El projecte està organitzat en les següents carpetes i fitxers:
 prova4.1/
 ├── Controllers/
 │   ├── BookController.php
-|   ├── UserController.php
+│   ├── UserController.php
 ├── models/
 │   ├── Book.php
-|   ├── User.php
+│   ├── User.php
 ├── Public/
 │   ├── Estils/
 │   │   ├── styles.css
 │   │   ├── edit.css
-|   |   ├── login.css
-|   |   ├── change-psw.css
+│   │   ├── login.css
+│   │   ├── change-psw.css
 │   ├── functions.php
 │   ├── login.php
 │   ├── logout.php
 │   ├── signup.php
 │   ├── delete.php
-|   ├── edit.php
-|   ├── insert.php
-|   ├── udate.php
-|   ├── index.php
-|   ├── session_check.php
-|   ├── change-psw.php
-|   ├── flash.php
+│   ├── edit.php
+│   ├── insert.php
+│   ├── update.php
+│   ├── index.php
+│   ├── session_check.php
+│   ├── change-psw.php
+│   ├── flash.php
 ├── Views/
 │   ├── index.view.php
 │   ├── edit.view.php
 │   ├── insert.view.php
-|   ├── delete.view.php
-|   ├── login.view.php
-|   ├── signup.view.php
-|   ├── change-psw.view.php
+│   ├── delete.view.php
+│   ├── login.view.php
+│   ├── signup.view.php
+│   ├── change-psw.view.php
 ├── config.php
 
 ### Descripció dels Fitxers Principals
