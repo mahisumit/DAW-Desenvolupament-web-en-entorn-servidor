@@ -40,7 +40,7 @@
 - **changepswd.view.php**: Aquest codi representa la interfície d'usuari per canviar la contrasenya. Inclou camps de formulari perquè l'usuari introdueixi el seu correu electrònic, la contrasenya actual, la nova contrasenya i la confirmi.
 - **delete.view.php**: Aquest codi representa la interfície d'usuari per confirmar l'eliminació d'un rellotge. Mostra a missatge de confirmació i ofereix opcions a qualsevol de les dues confirmeu l'eliminació o cancel·leu l'acció.
 - **edit.view.php**: Aquest codi representa la interfície d'usuari per editar els detalls d'un rellotge específic. Inclou camps de formulari preemplenats amb els detalls actuals del rellotge i permet a l'usuari actualitzar la informació.
-- **index.view.php**: 
+- **index.view.php**: Aquest codi gestiona la pàgina principal funcionalitat, inclosa la gestió de sessions, "Recorda Validació del testimoni Me" i comprovacions d'autenticació de l'usuari assegura que l'usuari està correctament autenticat i gestiona els temps d'espera de les sessions.
 - **insert.view.php**: Aquest codi representa la interfície d'usuari per inserir un rellotge nou. Inclou camps de formulari per a l'usuari per introduir els detalls del rellotge i carregar una imatge, i mostra qualsevol missatge d'èxit o error.
 - **login.view.php**: Aquest codi representa la interfície d'usuari per a la pàgina d'inici de sessió. Inclou camps de formulari per a l'usuari per introduir el seu correu electrònic o nom d'usuari, contrasenya i una opció per recordar l'inici de sessió.
 - **my_watch.view.php**: Aquest codi representa l'usuari interfície per mostrar els rellotges creats pel usuari connectat. Inclou una llista de rellotges amb opcions per editar o suprimir cada rellotge.
