@@ -1,19 +1,19 @@
 <?php
-//Sumit Mahi
+// Sumit Mahi
 session_start();
-require_once '../config.php'; 
+require_once '../config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $login = $_POST['login']; 
+    $login = $_POST['login'];
     $password = $_POST['password'];
     $remember_me = isset($_POST['remember_me']);
 
-    // si l'inici de sessió és un correu electrònic o un nom d'usuari
+    
     if (filter_var($login, FILTER_VALIDATE_EMAIL)) {
-        // Login amb un correu electrònic
+        // iniciar sessió amb correu electrònic
         $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
     } else {
-        // Login amb un nom d'usuari
+        // iniciar sessió amb nom d'usuari
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
     }
     $stmt->execute([$login]);
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt = $pdo->prepare("UPDATE users SET remember_token = ?, remember_token_expiry = ? WHERE id = ?");
             $stmt->execute([$token, $expiry, $user['id']]);
 
-            // Estableix una cookie amb el token
+            // Establir una cookie "Recorda'm"
             setcookie('remember_me', $token, $expiry, "/");
         }
 
@@ -43,6 +43,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $_SESSION['message'] = "Invalid email or username and password!";
         header("Location: login.php");
+        exit();
+    }
+}
+
+// Check if the user has a "Remember Me" cookie
+if (isset($_COOKIE['remember_me'])) {
+    $token = $_COOKIE['remember_me'];
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE remember_token = ? AND remember_token_expiry > ?");
+    $stmt->execute([$token, time()]);
+    $user = $stmt->fetch();
+
+    if ($user) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['is_admin'] = $user['is_admin'];
+        $_SESSION['last_activity'] = time();
+        header("Location: index.php");
         exit();
     }
 }
