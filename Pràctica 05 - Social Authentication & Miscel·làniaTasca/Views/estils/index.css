@@ -1,0 +1,340 @@
+/* Sumit Mahi */
+/* Estils per a la pàgina main*/
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    padding: 10px;
+    background-color: #000000; /* Set header color to grey */
+    border-bottom: 1px solid #000000;
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff; /* Set text color to white for better contrast */
+}
+
+.header .home-icon {
+    position: absolute;
+    left: 20px;
+    color: #fff; /* Set icon color to white for better contrast */
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.header .home-icon:hover {
+    color: #ff6f61;
+}
+
+.header .user-info {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff; /* Set text color to white for better contrast */
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: green;
+}
+
+.watches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for 3x3 grid */
+    gap: 30px; /* Reduced gap between watch boxes */
+    padding: 20px; /* Reduced padding around the grid */
+    position: relative;
+    z-index: 1; /* Ensure watches are below header and dropdown */
+}
+
+.watch {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Reduced padding inside the watch box */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.watch:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.watch img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    max-height: 250px; /* Reduced maximum height for the images */
+}
+
+.watch h2 {
+    font-size: 1.5em; /* Reduced font size for the title */
+    margin: 10px 0;
+}
+
+.watch p {
+    margin: 5px 0;
+    font-size: 1.0em; /* Reduced font size for the text */
+}
+
+.watch a {
+    display: block;
+    margin-top: 10px;
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+.watch a:hover {
+    text-decoration: underline;
+}
+
+.watch-actions {
+    margin-top: 10px;
+}
+
+.icon-button {
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    margin: 0 5px;
+    padding: 5px; /* Reduced padding for the buttons */
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+    background-color: #555;
+}
+
+.insert-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.insert-button a {
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.insert-button a:hover {
+    background-color: #555;
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination a {
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    margin: 0 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #555;
+}
+
+.pagination span {
+    margin: 0 10px;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 2; /* Ensure dropdown is above watches */
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff; /* Set text color to white for better contrast */
+    position: relative;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-left: 10px; /* Move the avatar to the right */
+}
+
+.default-avatar {
+    font-size: 40px;
+    color: #ccc;
+    margin-left: 10px; /* Move the default avatar to the right */
+}
+
+.username {
+    font-size: 16px;
+    color: #fff; /* Set text color to white for better contrast */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 3; /* Ensure dropdown content is above watches */
+    right: 0; /* Align the dropdown content to the right */
+    transform: translateX(-0%); /* Move the dropdown content slightly to the left */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+/* Styled select */
+.styled-select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.styled-select:hover {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Popup styles */
+.popup {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.popup-content h2 {
+    margin-top: 10px;
+}
+
+.popup-content p {
+    margin: 10px 0;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.default-avatar {
+    font-size: 40px;
+    color: #ccc;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 16px;
+    color: #fff; /* Set text color to white for better contrast */
+}
