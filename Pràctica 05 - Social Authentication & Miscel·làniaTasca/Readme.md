@@ -1,7 +1,7 @@
 # Sumit Mahi 
 # Pràctica 05 - Social Authentication & Miscel·lània
 
-## Controllers
+## Controllers:
 - **admin.php**: Aquest codi s'encarrega de gestionar les funcionalitats administratives (admin panel). Assegura que només els usuaris amb privilegis administratius puguin accedir al tauler d'administració.
 - **AuthController.php**: Aquest codi serveix per gestionar l'autenticació dels usuaris, inclosos els processos d'inici de sessió i registre. Interacciona amb el model `Usuari` per realitzar operacions de base de dades relacionades amb l'autenticació d'usuaris. El fitxer inclou mètodes per gestionar l'inici de sessió d'usuari validant les credencials i establint variables de sessió, i el registre d'usuari validant l'entrada, comprovant els noms d'usuari existents i creant un nou usuari si la validació passa.
 - **changepswd.php**: Aquest codi gestiona la funcionalitat de canvi de contrasenya per als usuaris.
@@ -22,11 +22,11 @@
 - **watch_details.php**: Aquest codi recupera informació detallada sobre un rellotge específic de la base de dades mitjançant l'identificador de rellotge proporcionat i inclou la vista per mostrar aquests detalls.
 - **WatchController.php**: Aquest codi defineix la classe `WatchController`, que gestiona les operacions relacionades amb els rellotges, com ara la inserció, la recuperació, l'actualització i la supressió de rellotges i registres a la base de dades.
 
-## Models
+## Models:
 - **User.php**: Aquest codi defineix la classe "Usuari", que gestiona les operacions relacionades amb l'usuari, com ara el registre, l'inici de sessió, la comprovació de noms d'usuari i correus electrònics existents i la recuperació de les dades de l'usuari per ID.
 - **Watch.php**: Aquest codi gestiona diverses operacions relacionades amb els rellotges, com ara la recuperació, la inserció, l'actualització i la supressió de registres de rellotges a la base de dades.
 
-## src
+## src:
 - **Exeption.php**
 - **OAuth.php**
 - **PHPMailer.php**
@@ -35,7 +35,7 @@
 ### **/images**
 - **imatge.jpg**
 
-## Views
+## Views:
 - **admin.view.php**
 - **changepswd.view.php**
 - **delete.view.php**
@@ -51,7 +51,7 @@
 - **signup.view.php**
 - **watch_details.view.php**
 
-### Estils
+### Estils:
 - **admin.css**: Estils per a la pàgina de admin (admin panel).
 - **changepaswd.css**: Estils per a la pàgina de canvi de contrasenya.
 - **delete.css**: Estils per a la pàgina d'eliminació de rellotge.
@@ -65,8 +65,8 @@
 - **signup.css**: Estils per a la pàgina de registre.
 - **styles.css**: Estils per la pàgina main.
 
-#### config.php
+#### config.php:
 **Defineix els paràmetres de connexió de la base de dades i estableix una connexió a la base de dades MySQL.**
 
-#### Readme.md
+#### Readme.md:
 **El fitxer Readme.md.**
