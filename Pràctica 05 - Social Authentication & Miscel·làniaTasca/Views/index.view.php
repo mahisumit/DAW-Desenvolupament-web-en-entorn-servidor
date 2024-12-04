@@ -21,15 +21,14 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_me'])) {
 }
 
 // Temps d'inactivitat per a la sessió (en segons)
-$timeout_duration = 60;
+$timeout_duration = 60; // 40 mins = 2400 seconds
 
 // Per comprovar si l'usuari està autenticat
 if (isset($_SESSION['user_id'])) {
-    // Check if the last activity timestamp is set
     if (isset($_SESSION['last_activity'])) {
         // Calculate the session lifetime
         $elapsed_time = time() - $_SESSION['last_activity'];
-        // If the session has expired, destroy the session and redirect to login
+        // Si l'usuari ha estat inactiu durant més temps que el temps d'inactivitat permès, tanca la sessió
         if ($elapsed_time > $timeout_duration) {
             session_unset();
             session_destroy();
@@ -37,11 +36,10 @@ if (isset($_SESSION['user_id'])) {
             exit();
         }
     }
-    // Update the last activity timestamp
     $_SESSION['last_activity'] = time();
 }
 
-// Fetch the user's current data if logged in
+// Obtenir (Fetch) les dades de l'usuari si ha iniciat sessió
 if (isset($_SESSION['user_id'])) {
     $user_id = $_SESSION['user_id'];
     $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
@@ -57,10 +55,10 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $offset = ($page - 1) * $posts_per_page;
 
 // Validate sorting column
-$valid_sort_columns = ['name', 'price'];
-$sort_by = in_array($sort_by, $valid_sort_columns) ? $sort_by : 'name';
+$valid_sort_columns = ['name', 'price']; 
+$sort_by = in_array($sort_by, $valid_sort_columns) ? $sort_by : 'name'; // if no sorting is applied, default to sorting by name
 
-// Fetch the watches from the database with sorting and pagination
+// Obteniu els rellotges de la base de dades amb ordenació i paginació
 $stmt = $pdo->prepare("
     SELECT watches.*, users.username 
     FROM watches 
@@ -76,7 +74,7 @@ $watches = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // Fetch the total number of watches for pagination
 $total_stmt = $pdo->query("SELECT COUNT(*) FROM watches");
 $total_watches = $total_stmt->fetchColumn();
-$total_pages = ceil($total_watches / $posts_per_page);
+$total_pages = ceil($total_watches / $posts_per_page);// per calcular el nombre total de pàgines per a la paginació.
 
 // Fetch the watch details if "Continue Reading" is clicked
 $selected_watch = null;
@@ -92,7 +90,7 @@ if (isset($_GET['watch_id'])) {
 
 // Function to truncate text to a specified number of lines
 function truncateText($text, $lines = 2) {
-    $linesArray = explode("\n", wordwrap($text, 100));
+    $linesArray = explode("\n", wordwrap($text, 100)); // trunca un text donat a un determinat nombre de línies per a una millor visualització.
     return implode("\n", array_slice($linesArray, 0, $lines));
 }
 ?>
@@ -106,6 +104,7 @@ function truncateText($text, $lines = 2) {
     <link rel="stylesheet" href="../views/estils/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
+        // script per al menú desplegable es pot canviar fent clic a el botó i es tanca fent clic fora de la desplegable.
         document.addEventListener('DOMContentLoaded', function() {
             var dropdown = document.querySelector('.dropdown');
             var dropbtn = document.querySelector('.dropbtn');
@@ -124,7 +123,7 @@ function truncateText($text, $lines = 2) {
             // Live search functionality
             var searchInput = document.querySelector('.search-form input[name="query"]');
             searchInput.addEventListener('input', function() {
-                var query = searchInput.value;
+                var query = searchInput.value; // Send the AJAX search query to the server (search.php)
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', 'search.php?query=' + encodeURIComponent(query), true);
                 xhr.onreadystatechange = function() {
@@ -156,7 +155,8 @@ function truncateText($text, $lines = 2) {
         }
     </style>
 </head>
-<body>
+<body> 
+    <!-- Header and user info -->
     <div class="header">
         <a href="index.php" class="home-icon"><i class="fas fa-home"></i></a>
         <h1>Watches</h1>
@@ -207,14 +207,13 @@ function truncateText($text, $lines = 2) {
             </div>
             <?php unset($_SESSION['message']); ?>
         <?php endif; ?>
-        <!-- Add your main page content here -->
         <!-- Search Form -->
         <form class="search-form">
             <input type="text" name="query" placeholder="Search for watches..." required>
         </form>
     </div>
 
-    <!-- Watches Section -->
+    <!-- Watches Section, to display watches-->
     <div class="watches">
         <?php foreach ($watches as $watch): ?>
             <div class="watch">
@@ -236,12 +235,14 @@ function truncateText($text, $lines = 2) {
             </div>
         <?php endforeach; ?>
     </div>
+    <!-- Insert Button -->
     <?php if (isset($_SESSION['user_id'])): ?>
         <div class="insert-button" style="text-align: center; margin: 20px 0;">
             <a href="insert.php">Insert Watch</a>
         </div>
         <br>
     <?php endif; ?>
+    <!-- Pagination -->
     <div class="pagination" style="text-align: center;">
         <?php if ($page > 1): ?>
             <a href="?page=1&sort_by=<?php echo $sort_by; ?>&order=<?php echo $order; ?>&posts_per_page=<?php echo $posts_per_page; ?>"><<</a>
@@ -275,7 +276,7 @@ function truncateText($text, $lines = 2) {
         </form>
     </div>
 
-    <!-- Popup -->
+    <!-- Popup, for continue reading about watch -->
     <?php if ($selected_watch): ?>
         <div id="popup" class="popup">
             <div class="popup-content">
