@@ -32,24 +32,27 @@
 - **PHPMailer.php**
 - **POP3.php**
 - **SMTP.php**
-### **/images**
+### **/images:**
 - **imatge.jpg**
 
 ## Views:
-- **admin.view.php**
-- **changepswd.view.php**
-- **delete.view.php**
-- **edit.view.php**
-- **index.view.php**
-- **insert.view.php**
-- **login.view.php**
-- **my_watch.view.php**
-- **profile.view.php**
-- **recover_password.view.php**
-- **reset_password.view.php**
-- **search_results.view.php**
-- **signup.view.php**
-- **watch_details.view.php**
+- **admin.view.php**: El codi és responsable de representar la interfície del tauler d'administració. Mostra una llista d'usuaris i ofereix opcions per eliminar usuaris.
+- **changepswd.view.php**: Aquest codi representa la interfície d'usuari per canviar la contrasenya. Inclou camps de formulari perquè l'usuari introdueixi el seu correu electrònic, la contrasenya actual, la nova contrasenya i la confirmi.
+- **delete.view.php**: Aquest codi representa la interfície d'usuari per confirmar l'eliminació d'un rellotge. Mostra a missatge de confirmació i ofereix opcions a qualsevol de les dues confirmeu l'eliminació o cancel·leu l'acció.
+- **edit.view.php**: Aquest codi representa la interfície d'usuari per editar els detalls d'un rellotge específic. Inclou camps de formulari preemplenats amb els detalls actuals del rellotge i permet a l'usuari actualitzar la informació.
+- **index.view.php**: 
+- **insert.view.php**: Aquest codi representa la interfície d'usuari per inserir un rellotge nou. Inclou camps de formulari per a l'usuari per introduir els detalls del rellotge i carregar una imatge, i mostra qualsevol missatge d'èxit o error.
+- **login.view.php**: Aquest codi representa la interfície d'usuari per a la pàgina d'inici de sessió. Inclou camps de formulari per a l'usuari per introduir el seu correu electrònic o nom d'usuari, contrasenya i una opció per recordar l'inici de sessió.
+- **my_watch.view.php**: Aquest codi representa l'usuari interfície per mostrar els rellotges creats pel usuari connectat. Inclou una llista de rellotges amb opcions per editar o suprimir cada rellotge.
+- **profile.view.php**: Aquest codi representa la interfície d'usuari per actualitzar el perfil de l'usuari. Inclou camps de formulari per
+l'usuari per actualitzar el seu nom d'usuari i avatar, i això mostra els missatges d'èxit.
+- **recover_password.view.php**: Aquest codi representa el interfície d'usuari per a la pàgina de recuperació de contrasenya. Inclou un formulari perquè l'usuari introdueixi la seva adreça de correu electrònic sol·licitar un restabliment de la contrasenya i mostra qualsevol error o
+missatges d'èxit.
+- **reset_password.view.php**: Aquest codi representa l'usuari interfície per a la pàgina de restabliment de la contrasenya. Inclou forma
+camps perquè l'usuari introdueixi una nova contrasenya i confirmi i mostra qualsevol missatge d'error o èxit.
+- **search_results.view.php**: Aquest codi representa l'usuari interfície per mostrar els resultats de la cerca. Mostra una llista de rellotges que coincideixen amb la consulta de cerca o un missatge si no es troben resultats.
+- **signup.view.php**: Aquest codi representa la interfície d'usuari per a la pàgina de registre. Inclou camps de formulari per a l'usuari introduïu el seu nom d'usuari, correu electrònic, contrasenya i confirmeu contrasenya. També mostra els missatges d'error o d'èxit.
+- **watch_details.view.php**: Aquest codi representa l'usuari interfície per mostrar informació detallada sobre a rellotge específic. Inclou el nom del rellotge, el preu, informació, imatge i enllaç a la pàgina oficial.
 
 ### Estils:
 - **admin.css**: Estils per a la pàgina de admin (admin panel).
