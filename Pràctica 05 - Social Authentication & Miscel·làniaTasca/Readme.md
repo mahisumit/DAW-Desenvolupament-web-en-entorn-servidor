@@ -75,4 +75,4 @@ camps perquè l'usuari introdueixi una nova contrasenya i confirmi i mostra qual
 **El fitxer Readme.md.**
 
 ### pt05_sumit_mahi.sql:
-** Fitxer de base de dades Mysql.** 
+**Fitxer de base de dades Mysql.** 
