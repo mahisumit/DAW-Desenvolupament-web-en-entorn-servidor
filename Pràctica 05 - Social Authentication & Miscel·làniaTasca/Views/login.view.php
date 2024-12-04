@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../views/estils/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="container">
+        <!-- Home Icon -->
+        <a href="index.php" class="home-icon"><i class="fas fa-home"></i></a>
         <h1>Login</h1>
         <?php if (isset($_SESSION['message'])): ?>
             <div class="error"><?php echo htmlspecialchars($_SESSION['message']); ?></div>
